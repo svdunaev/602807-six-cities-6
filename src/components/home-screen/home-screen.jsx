@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import PlaceCard, {CardType} from "../place-card/place-card";
+import PlaceCard from "../place-card/place-card";
+import {CardType} from "../../common-prop-types";
 
 const HomeScreen = (props) => {
   const {cards} = props;

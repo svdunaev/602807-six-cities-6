@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import App from "./components/app/app";
-import {RoomType} from "./components/place-card/place-card";
+import {RoomType} from "././constants";
 
 const cards = [
   {

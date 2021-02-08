@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import HomeScreen from "../home-screen/home-screen";
-import {CardType} from "../place-card/place-card";
+import {CardType} from "../../common-prop-types";
 
 const App = (props) => {
   const {cards} = props;

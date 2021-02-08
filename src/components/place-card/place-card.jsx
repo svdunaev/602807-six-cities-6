@@ -1,15 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
+import {CardType} from "../../common-prop-types";
 
-export const RoomType = {
-  apartment: `Apartment`,
-  room: `Private room`,
-  house: `House`,
-  hotel: `Hotel`,
-};
 
-const PlaceCard = ({card}) => {
-  const {name, image, price, rating, type, isPremium, isFavorite} = card;
+const PlaceCard = (props) => {
+  const {
+    card: {name, image, price, rating, type, isPremium, isFavorite}
+  } = props;
   return (
     <article className="cities__place-card place-card">
       {isPremium && (
@@ -51,16 +47,6 @@ const PlaceCard = ({card}) => {
     </article>
   );
 };
-
-export const CardType = PropTypes.exact({
-  image: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  rating: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
-  type: PropTypes.oneOf([RoomType.apartment, RoomType.hotel, RoomType.house, RoomType.room]).isRequired,
-  isPremium: PropTypes.bool.isRequired,
-  isFavorite: PropTypes.bool.isRequired,
-});
 
 PlaceCard.propTypes = {
   card: CardType.isRequired,
