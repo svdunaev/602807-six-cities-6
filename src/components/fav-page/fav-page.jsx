@@ -1,6 +1,6 @@
 import React from "react";
 
-const FavScreen = () => {
+const FavPage = () => {
   return (
     <React.Fragment>
       <div style={{display: `none`}}>
@@ -167,4 +167,4 @@ const FavScreen = () => {
   );
 };
 
-export default FavScreen;
+export default FavPage;

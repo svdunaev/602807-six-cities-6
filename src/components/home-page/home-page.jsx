@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import PlaceCard from "../place-card/place-card";
 import {CardType} from "../../common-prop-types";
 
-const HomeScreen = (props) => {
+const HomePage = (props) => {
   const {cards} = props;
   return (
     <React.Fragment>
@@ -112,8 +112,8 @@ const HomeScreen = (props) => {
   );
 };
 
-HomeScreen.propTypes = {
+HomePage.propTypes = {
   cards: PropTypes.arrayOf(CardType).isRequired,
 };
 
-export default HomeScreen;
+export default HomePage;

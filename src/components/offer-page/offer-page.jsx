@@ -1,6 +1,6 @@
 import React from "react";
 
-const OfferScreen = () => {
+const OfferPage = () => {
   return (
     <React.Fragment>
       <div style={{display: `none`}}>
@@ -333,4 +333,4 @@ const OfferScreen = () => {
   );
 };
 
-export default OfferScreen;
+export default OfferPage;

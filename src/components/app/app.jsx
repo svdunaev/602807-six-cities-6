@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import HomeScreen from "../home-screen/home-screen";
-import LoginScreen from "../login-screen/login-screen";
-import FavScreen from "../fav-screen/fav-screen";
-import OfferScreen from "../offer-screen/offer-screen";
-import PageNotFound from "../404/404";
+import HomePage from "../home-page/home-page";
+import LoginPage from "../login-page/login-page";
+import FavPage from "../fav-page/fav-page";
+import OfferPage from "../offer-page/offer-page";
+import PageNotFound from "../page-not-found/page-not-found";
 import {CardType} from "../../common-prop-types";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 
@@ -14,16 +14,16 @@ const App = (props) => {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact>
-          <HomeScreen cards={cards} />
+          <HomePage cards={cards} />
         </Route>
         <Route path="/login" exact>
-          <LoginScreen />
+          <LoginPage />
         </Route>
         <Route path="/favorites" exact>
-          <FavScreen />
+          <FavPage />
         </Route>
         <Route path="/offer/:id">
-          <OfferScreen />
+          <OfferPage />
         </Route>
         <Route>
           <PageNotFound />

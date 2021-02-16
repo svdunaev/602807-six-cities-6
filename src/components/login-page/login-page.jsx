@@ -1,6 +1,6 @@
 import React from "react";
 
-const LoginScreen = () => {
+const LoginPage = () => {
   return (
     <React.Fragment>
       <div className="page page--gray page--login">
@@ -56,4 +56,4 @@ const LoginScreen = () => {
   );
 };
 
-export default LoginScreen;
+export default LoginPage;
