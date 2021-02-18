@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import {CardType} from "../../common-prop-types";
+import {Link} from "react-router-dom";
 
 
 const PlaceCard = (props) => {
+  const [, setActive] = useState(false);
   const {
-    card: {name, image, price, rating, type, isPremium, isFavorite}
+    card: {name, price, rating, type, isPremium, isFavorite, previewImage}
   } = props;
   return (
     <article className="cities__place-card place-card">
@@ -14,9 +16,9 @@ const PlaceCard = (props) => {
         </div>
       )}
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="#">
-          <img className="place-card__image" src={image} style={{width: `260px`, height: `200px`}} alt="Place image"></img>
-        </a>
+        <Link to="offer/:id" onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)}>
+          <img className="place-card__image" src={previewImage} style={{width: `260px`, height: `200px`}} alt="Place image"></img>
+        </Link>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
@@ -48,8 +50,6 @@ const PlaceCard = (props) => {
   );
 };
 
-PlaceCard.propTypes = {
-  card: CardType.isRequired,
-};
+PlaceCard.propTypes = CardType.isRequired;
 
 export default PlaceCard;

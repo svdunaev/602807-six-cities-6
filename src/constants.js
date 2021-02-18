@@ -3,4 +3,5 @@ export const RoomType = {
   room: `Private room`,
   house: `House`,
   hotel: `Hotel`,
+  studio: `Studio`,
 };

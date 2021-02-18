@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import PlaceCard from "../place-card/place-card";
+import OffersList from "../offers-list/offers-list";
 import {CardType} from "../../common-prop-types";
 
 const HomePage = (props) => {
   const {cards} = props;
+  console.log(`Home page rendered`)
   return (
     <React.Fragment>
       <div style={{display: `none`}}>
@@ -93,13 +94,7 @@ const HomePage = (props) => {
                     <li className="places__option" tabIndex="0">Top rated first</li>
                   </ul>
                 </form>
-                <div className="cities__places-list places__list tabs__content">
-                  {cards.map((cardItem, index) => {
-                    return (
-                      <PlaceCard card={cardItem} key={index} />
-                    );
-                  })}
-                </div>
+                <OffersList cards={cards} />
               </section>
               <div className="cities__right-section">
                 <section className="cities__map map"></section>

@@ -1,6 +1,11 @@
 import React from "react";
+import PlaceCard from "../place-card/place-card";
 
-const FavPage = () => {
+const FavPage = (props) => {
+  const cards = props;
+  const {
+    card: {isFavorite}
+  } = props;
   return (
     <React.Fragment>
       <div style={{display: `none`}}>
