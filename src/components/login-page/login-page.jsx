@@ -16,8 +16,7 @@ const LoginPage = () => {
                 <ul className="header__nav-list">
                   <li className="header__nav-item user">
                     <a className="header__nav-link header__nav-link--profile" href="#">
-                      <div className="header__avatar-wrapper user__avatar-wrapper">
-                      </div>
+                      <div className="header__avatar-wrapper user__avatar-wrapper" />
                       <span className="header__login">Sign in</span>
                     </a>
                   </li>

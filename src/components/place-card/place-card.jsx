@@ -11,6 +11,14 @@ const PlaceCard = (props) => {
     imageWrapperClassName,
     infoWrapperClassName,
   } = props;
+
+  PlaceCard.defaultProps = {
+    rootClassName: ``,
+    imageWrapperClassName: ``,
+    infoWrapperClassName: ``,
+
+  };
+
   const handleMouseEnter = useCallback(() => {
     setActive(true);
   }, []);
@@ -29,7 +37,7 @@ const PlaceCard = (props) => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <img className="place-card__image" src={previewImage} style={{width: `260px`, height: `200px`}} alt="Place image"></img>
+          <img className="place-card__image" src={previewImage} style={{width: `260px`, height: `200px`}} alt="Place image" />
         </Link>
       </div>
       <div className={`place-card__info ${infoWrapperClassName}`}>

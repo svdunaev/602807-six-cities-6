@@ -17,7 +17,9 @@ const FavLocationsItem = (props) => {
       </div>
       <div className="favorites__places">
         {cityOffers.map((cardItem) =>
-          <PlaceCard card={cardItem} key={cardItem.id}
+          <PlaceCard
+            key={cardItem.id}
+            card={cardItem}
             rootClassName="favorites__card"
             imageWrapperClassName="favorites__image-wrapper"
             infoWrapperClassName="favorites__card-info"/>

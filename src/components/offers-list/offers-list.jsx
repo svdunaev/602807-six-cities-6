@@ -9,7 +9,11 @@ const OffersList = (props) => {
     <div className="cities__places-list places__list tabs__content">
       {cards.map((cardItem) => {
         return (
-          <PlaceCard card={cardItem} key={cardItem.id} rootClassName="cities__place-card" imageWrapperClassName="cities__image-wrapper" />
+          <PlaceCard
+            key={cardItem.id}
+            card={cardItem}
+            rootClassName="cities__place-card"
+            imageWrapperClassName="cities__image-wrapper" />
         );
       })}
     </div>
