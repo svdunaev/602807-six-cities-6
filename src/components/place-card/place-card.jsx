@@ -1,26 +1,38 @@
-import React, {useState} from "react";
-import {CardType} from "../../common-prop-types";
+import React, {useCallback, useState} from "react";
+import {OfferType} from "../../common-prop-types";
 import {Link} from "react-router-dom";
 
 
 const PlaceCard = (props) => {
   const [, setActive] = useState(false);
   const {
-    card: {name, price, rating, type, isPremium, isFavorite, previewImage}
+    card: {name, price, rating, type, isPremium, isFavorite, previewImage},
+    rootClassName,
+    imageWrapperClassName,
+    infoWrapperClassName,
   } = props;
+  const handleMouseEnter = useCallback(() => {
+    setActive(true);
+  }, []);
+  const handleMouseLeave = useCallback(() => {
+    setActive(false);
+  }, []);
   return (
-    <article className="cities__place-card place-card">
+    <article className={`place-card ${rootClassName}`}>
       {isPremium && (
         <div className="place-card__mark">
           <span>Premium</span>
         </div>
       )}
-      <div className="cities__image-wrapper place-card__image-wrapper">
-        <Link to="offer/:id" onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)}>
+      <div className={`place-card__image-wrapper ${imageWrapperClassName}`}>
+        <Link to="offer/:id"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <img className="place-card__image" src={previewImage} style={{width: `260px`, height: `200px`}} alt="Place image"></img>
         </Link>
       </div>
-      <div className="place-card__info">
+      <div className={`place-card__info ${infoWrapperClassName}`}>
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
             <b className="place-card__price-value">&euro;{price}</b>
@@ -50,6 +62,6 @@ const PlaceCard = (props) => {
   );
 };
 
-PlaceCard.propTypes = CardType.isRequired;
+PlaceCard.propTypes = OfferType.isRequired;
 
 export default PlaceCard;

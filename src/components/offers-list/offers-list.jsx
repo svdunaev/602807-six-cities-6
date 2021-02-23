@@ -1,16 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import PlaceCard from "../place-card/place-card";
-import {CardType} from "../../common-prop-types";
+import {OfferType} from "../../common-prop-types";
 
 const OffersList = (props) => {
   const {cards} = props;
-  console.log(cards);
   return (
     <div className="cities__places-list places__list tabs__content">
       {cards.map((cardItem) => {
         return (
-          <PlaceCard card={cardItem} key={cardItem.id} />
+          <PlaceCard card={cardItem} key={cardItem.id} rootClassName="cities__place-card" imageWrapperClassName="cities__image-wrapper" />
         );
       })}
     </div>
@@ -18,7 +17,7 @@ const OffersList = (props) => {
 };
 
 OffersList.propTypes = {
-  cards: PropTypes.arrayOf(CardType).isRequired,
+  cards: PropTypes.arrayOf(OfferType).isRequired,
 };
 
 export default OffersList;

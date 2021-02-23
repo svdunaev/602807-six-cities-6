@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import OffersList from "../offers-list/offers-list";
-import {CardType} from "../../common-prop-types";
+import {OfferType} from "../../common-prop-types";
 
 const HomePage = (props) => {
   const {cards} = props;
-  console.log(`Home page rendered`)
   return (
     <React.Fragment>
       <div style={{display: `none`}}>
@@ -108,7 +107,7 @@ const HomePage = (props) => {
 };
 
 HomePage.propTypes = {
-  cards: PropTypes.arrayOf(CardType).isRequired,
+  cards: PropTypes.arrayOf(OfferType).isRequired,
 };
 
 export default HomePage;

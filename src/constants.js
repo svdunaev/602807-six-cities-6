@@ -5,3 +5,5 @@ export const RoomType = {
   hotel: `Hotel`,
   studio: `Studio`,
 };
+
+export const CITIES = [`Amsterdam`, `Cologne`, `Dusseldorf`, `Paris`, `Brussels`, `Hamburg`];
