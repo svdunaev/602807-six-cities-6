@@ -5,7 +5,7 @@ import LoginPage from "../login-page/login-page";
 import FavPage from "../fav-page/fav-page";
 import OfferPage from "../offer-page/offer-page";
 import PageNotFound from "../page-not-found/page-not-found";
-import {CardType} from "../../common-prop-types";
+import {OfferType} from "../../common-prop-types";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 const App = (props) => {
@@ -20,7 +20,7 @@ const App = (props) => {
           <LoginPage />
         </Route>
         <Route path="/favorites" exact>
-          <FavPage />
+          <FavPage cards={cards}/>
         </Route>
         <Route path="/offer/:id">
           <OfferPage />
@@ -34,7 +34,7 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  cards: PropTypes.arrayOf(CardType).isRequired,
+  cards: PropTypes.arrayOf(OfferType).isRequired,
 };
 
 export default App;

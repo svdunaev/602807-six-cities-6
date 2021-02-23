@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import PlaceCard from "../place-card/place-card";
-import {CardType} from "../../common-prop-types";
+import OffersList from "../offers-list/offers-list";
+import {OfferType} from "../../common-prop-types";
 
 const HomePage = (props) => {
   const {cards} = props;
@@ -17,15 +17,14 @@ const HomePage = (props) => {
             <div className="header__wrapper">
               <div className="header__left">
                 <a className="header__logo-link header__logo-link--active">
-                  <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41"></img>
+                  <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41" />
                 </a>
               </div>
               <nav className="header__nav">
                 <ul className="header__nav-list">
                   <li className="header__nav-item user">
                     <a className="header__nav-link header__nav-link--profile" href="#">
-                      <div className="header__avatar-wrapper user__avatar-wrapper">
-                      </div>
+                      <div className="header__avatar-wrapper user__avatar-wrapper" />
                       <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
                     </a>
                   </li>
@@ -93,13 +92,7 @@ const HomePage = (props) => {
                     <li className="places__option" tabIndex="0">Top rated first</li>
                   </ul>
                 </form>
-                <div className="cities__places-list places__list tabs__content">
-                  {cards.map((cardItem, index) => {
-                    return (
-                      <PlaceCard card={cardItem} key={index} />
-                    );
-                  })}
-                </div>
+                <OffersList cards={cards} />
               </section>
               <div className="cities__right-section">
                 <section className="cities__map map"></section>
@@ -113,7 +106,7 @@ const HomePage = (props) => {
 };
 
 HomePage.propTypes = {
-  cards: PropTypes.arrayOf(CardType).isRequired,
+  cards: PropTypes.arrayOf(OfferType).isRequired,
 };
 
 export default HomePage;
